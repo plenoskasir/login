@@ -3,49 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neon Login Creature</title>
+  <title>Neon Creature Login</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="page-shell">
-    <section class="login-scene" aria-label="Halaman login neon">
-      <canvas id="creatureCanvas" aria-hidden="true"></canvas>
-      <div class="grid-bg"></div>
-      <div class="ambient ambient-one"></div>
-      <div class="ambient ambient-two"></div>
-      <div class="scan-line"></div>
+  <main class="page">
+    <section class="login-stage" aria-label="Login page dengan hewan neon interaktif">
+      <div class="grid grid-back"></div>
+      <div class="grid grid-floor"></div>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
 
-      <div class="login-card">
-        <div class="card-shine"></div>
-        <p class="eyebrow">SECURE ACCESS</p>
-        <h1>SIGN IN</h1>
-        <p class="mini-copy">Gerakin mouse / sentuh layar, hewan neon-nya ikut arah.</p>
-
-        <form id="loginForm" autocomplete="off">
-          <label>
-            <span>Username</span>
-            <input id="username" type="text" placeholder="Masukkan username" />
-          </label>
-
-          <label>
-            <span>Password</span>
-            <input id="password" type="password" placeholder="Masukkan password" />
-          </label>
-
-          <div class="form-row">
-            <label class="remember">
-              <input type="checkbox" />
-              <span>Remember me</span>
-            </label>
-            <a href="#">Forgot?</a>
-          </div>
-
-          <button type="submit">LOGIN</button>
-          <p id="message" class="message" role="status"></p>
-        </form>
+      <!-- Area hiburan: hewan neon berada di sini dan ikut arah mouse/touch -->
+      <div class="creature-window" aria-hidden="true">
+        <canvas id="creatureCanvas"></canvas>
+        <div class="window-glow"></div>
+        <div class="window-border"></div>
+        <p class="hint">Gerakin mouse / sentuh layar ✦</p>
       </div>
+
+      <form class="login-card" id="loginForm" autocomplete="off">
+        <div class="card-glow"></div>
+        <p class="label-top">SYSTEM ACCESS</p>
+        <h1>SIGN IN</h1>
+
+        <label class="field">
+          <span>Username</span>
+          <input id="username" type="text" placeholder="Masukkan username" />
+        </label>
+
+        <label class="field">
+          <span>Password</span>
+          <input id="password" type="password" placeholder="Masukkan password" />
+        </label>
+
+        <button type="submit">LOGIN</button>
+        <p class="status" id="status" role="status"></p>
+      </form>
     </section>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>

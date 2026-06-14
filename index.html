@@ -3,43 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neon Creature Login</title>
+  <title>Abunawas Kasir Login</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="page">
-    <section class="login-stage" aria-label="Login page dengan hewan neon interaktif">
-      <div class="grid grid-back"></div>
-      <div class="grid grid-floor"></div>
-      <div class="orb orb-a"></div>
-      <div class="orb orb-b"></div>
-
-      <!-- Area hiburan: hewan neon berada di sini dan ikut arah mouse/touch -->
-      <div class="creature-window" aria-hidden="true">
+  <main class="auth-page">
+    <section class="auth-shell" aria-label="Halaman login kasir Abunawas">
+      <div class="visual-panel" aria-hidden="true">
+        <div class="grid-bg"></div>
+        <div class="floor-grid"></div>
         <canvas id="creatureCanvas"></canvas>
-        <div class="window-glow"></div>
-        <div class="window-border"></div>
-        <p class="hint">Gerakin mouse / sentuh layar ✦</p>
+        <div class="visual-glow"></div>
+        <div class="visual-copy">
+          <p class="mini-label">CYBER CASHIER ACCESS</p>
+          <h1>KasirKu Neon</h1>
+          <p>Gerakkan mouse atau sentuh layar. Hewan neon akan ikut arah cursor.</p>
+        </div>
       </div>
 
-      <form class="login-card" id="loginForm" autocomplete="off">
-        <div class="card-glow"></div>
-        <p class="label-top">SYSTEM ACCESS</p>
-        <h1>SIGN IN</h1>
+      <div class="login-panel">
+        <div class="brand">
+          <div class="brand-icon">A</div>
+          <h2>Abunawas</h2>
+          <p>Percetakan & Konveksi</p>
+          <span>Digital Printing + AI Powered</span>
+        </div>
 
-        <label class="field">
-          <span>Username</span>
-          <input id="username" type="text" placeholder="Masukkan username" />
-        </label>
+        <form id="loginForm" class="login-card" autocomplete="off">
+          <div class="card-head">
+            <p>Secure Access</p>
+            <h3>Akses Karyawan</h3>
+            <span>Silakan masuk untuk mengakses sistem kasir.</span>
+          </div>
 
-        <label class="field">
-          <span>Password</span>
-          <input id="password" type="password" placeholder="Masukkan password" />
-        </label>
+          <div class="role-row" aria-label="Pilih role demo cepat">
+            <button class="role-btn active" type="button" data-user="owner" data-pass="owner123">
+              <strong>BO</strong>
+              <span>Owner</span>
+            </button>
+            <button class="role-btn" type="button" data-user="admin" data-pass="admin123">
+              <strong>AD</strong>
+              <span>Admin</span>
+            </button>
+            <button class="role-btn" type="button" data-user="kasir" data-pass="kasir123">
+              <strong>KS</strong>
+              <span>Kasir</span>
+            </button>
+          </div>
 
-        <button type="submit">LOGIN</button>
-        <p class="status" id="status" role="status"></p>
-      </form>
+          <label class="field" for="username">
+            <span>Username</span>
+            <input id="username" name="username" type="text" placeholder="Ketik username..." inputmode="text" />
+          </label>
+
+          <label class="field" for="password">
+            <span>Password</span>
+            <input id="password" name="password" type="password" placeholder="Ketik password..." />
+          </label>
+
+          <div class="form-options">
+            <label class="remember">
+              <input type="checkbox" />
+              <span>Remember me</span>
+            </label>
+            <a href="#" draggable="false">Forgot?</a>
+          </div>
+
+          <button class="login-btn" type="submit">Masuk ke Sistem</button>
+          <p id="status" class="status" role="status" aria-live="polite"></p>
+        </form>
+
+        <a class="public-link" href="#katalog" draggable="false">▦ Buka Katalog Harga Publik</a>
+      </div>
     </section>
   </main>
 

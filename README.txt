@@ -1,13 +1,17 @@
-Neon Login Page v4
+Neon Login Page v5 Fix
 
-Update:
-- Bagian code editor bawah sudah dihapus.
-- Ada hewan neon interaktif di atas form login.
-- Hewan mengikuti arah mouse/touch dari seluruh area halaman.
-- Fix teks ikut ter-highlight/biru seperti copy saat mouse digerakkan.
-- Responsive untuk HP dan PC.
+Isi file:
+- index.html
+- style.css
+- script.js
+
+Perbaikan dari v4:
+- Hilangkan bug teks ikut terseleksi/highlight biru saat mouse digerakkan.
+- Layout login kasir lebih cocok untuk Abunawas: kiri animasi neon, kanan form clean.
+- Role demo Owner/Admin/Kasir.
+- Responsif HP, tablet, dan PC.
 
 Cara pakai:
 1. Extract zip.
 2. Buka index.html di browser.
-3. Upload index.html, style.css, dan script.js ke GitHub Pages kalau mau online.
+3. Upload index.html, style.css, script.js ke GitHub Pages/hosting.

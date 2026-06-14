@@ -60,19 +60,33 @@ function updatePointer(clientX, clientY) {
 
 window.addEventListener('resize', resizeCanvas);
 
-creatureWindow.addEventListener('mousemove', (event) => {
+// Pointer dibuat global: walau mouse ada di area login, hewan tetap ikut arah cursor.
+// CSS + selectstart di bawah mencegah teks ikut ke-select/highlight biru saat cursor digerakkan.
+window.addEventListener('pointermove', (event) => {
   updatePointer(event.clientX, event.clientY);
-});
+}, { passive: true });
 
 creatureWindow.addEventListener('touchstart', (event) => {
   const touch = event.touches[0];
   if (touch) updatePointer(touch.clientX, touch.clientY);
-}, { passive: true });
+}, { passive: false });
 
 creatureWindow.addEventListener('touchmove', (event) => {
+  event.preventDefault();
   const touch = event.touches[0];
   if (touch) updatePointer(touch.clientX, touch.clientY);
-}, { passive: true });
+}, { passive: false });
+
+document.addEventListener('selectstart', (event) => {
+  const tagName = event.target?.tagName;
+  if (tagName !== 'INPUT' && tagName !== 'TEXTAREA') {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener('dragstart', (event) => {
+  event.preventDefault();
+});
 
 function drawGlow(x, y, radius, color) {
   const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);

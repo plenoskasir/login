@@ -4,6 +4,24 @@
   padding: 0;
 }
 
+/* Biar saat mouse digerakkan/di-drag tidak muncul highlight biru seperti sedang copy teks. */
+body,
+.login-stage,
+.creature-window,
+.login-card,
+.label-top,
+h1,
+.hint,
+button {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
 :root {
   --cyan: #35ecff;
   --cyan-soft: rgba(53, 236, 255, 0.35);
@@ -144,6 +162,8 @@ body {
   height: clamp(210px, 34vh, 310px);
   border-radius: 12px;
   overflow: hidden;
+  touch-action: none;
+  -webkit-user-drag: none;
   background:
     radial-gradient(circle at 36% 55%, rgba(126, 255, 87, 0.13), transparent 28%),
     radial-gradient(circle at 80% 20%, rgba(255, 78, 219, 0.13), transparent 24%),
@@ -160,6 +180,8 @@ body {
   width: 100%;
   height: 100%;
   display: block;
+  touch-action: none;
+  -webkit-user-drag: none;
 }
 
 .window-glow {
